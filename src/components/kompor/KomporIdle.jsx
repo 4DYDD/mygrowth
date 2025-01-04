@@ -15,7 +15,9 @@ const KomporIdle = ({ value, handleStatus }) => {
       >
         <button
           onClick={() => {
-            handleStatus();
+            setTimeout(() => {
+              handleStatus();
+            }, 100);
           }}
           className="w-[4em] h-[4em] relative active:scale-90 transall"
         >
