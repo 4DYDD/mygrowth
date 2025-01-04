@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 // GAMBAR
-import burgerAnimation from "../../assets/gif/burger.gif";
-import burger from "../../assets/img/burger.png";
 
 import "./styles.css";
 
@@ -15,20 +13,20 @@ const renderTime = ({ remainingTime }) => {
 
   return (
     <div className="timer">
-      <img className="w-[70px]" src={burgerAnimation} alt="burgerAnimation" />
-      <div className="value font-bold">{remainingTime}</div>
+      <div className="font-bold !text-[5.5em] value">{remainingTime}</div>
     </div>
   );
 };
 
-const LoadingBurgerSatu = ({ duration }) => {
+const LoadingBurgerSatu = ({ duration, className, ...props }) => {
   return (
     <>
       <div
+        {...props}
         className={`
         p-0 
-        w-52 h-52 
         flex justify-center items-center
+        ${className}
         `}
       >
         <CountdownCircleTimer
